@@ -67,6 +67,8 @@ CREATE TABLE fase (
 ALTER TABLE ONLY fase
     ADD CONSTRAINT pk_fase PRIMARY KEY (id);
 ALTER TABLE ONLY fase
+    ADD CONSTRAINT uq_fase_nro_orden UNIQUE (nro_orden, id_proyecto);
+ALTER TABLE ONLY fase
     ADD CONSTRAINT fk_fase_proyecto FOREIGN KEY (id_proyecto)
     references proyecto (id);
 
@@ -159,6 +161,9 @@ CREATE TABLE tipo_item (
 
 ALTER TABLE ONLY tipo_item
     ADD CONSTRAINT pk_tipo_item PRIMARY KEY (id);
+ALTER TABLE ONLY rol
+    ADD CONSTRAINT uq_rol_codigo UNIQUE (codigo);
+
 ALTER TABLE ONLY tipo_item
     ADD CONSTRAINT fk_tipoItem_fase FOREIGN KEY (id_fase)
     references fase (id);

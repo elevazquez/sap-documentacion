@@ -255,7 +255,7 @@ CREATE SEQUENCE tipo_atributo_id_seq
     INCREMENT BY 1
     MINVALUE 1;
 
-ALTER SEQUENCE tipo_atributo_id_seq OWNED BY fase.id;
+ALTER SEQUENCE tipo_atributo_id_seq OWNED BY tipo_atributo.id;
 ALTER TABLE ONLY tipo_atributo ALTER COLUMN id SET DEFAULT nextval('tipo_atributo_id_seq');
 
 --verificar si esta correcto el primary key ya que la combinacion debe ser unica

@@ -181,7 +181,6 @@ ALTER TABLE ONLY tipo_item ALTER COLUMN id SET DEFAULT nextval('tipo_item_id_seq
 CREATE TABLE item (
     id integer NOT NULL,
     id_usuario integer NOT NULL,
-    id_version integer NOT NULL,
     id_fase integer NOT NULL,
     id_tipo_item integer NOT NULL,
     version integer NOT NULL,

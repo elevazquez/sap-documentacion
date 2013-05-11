@@ -556,4 +556,3 @@ CREATE SEQUENCE resolucion_miembros_id_seq
 
 ALTER SEQUENCE resolucion_miembros_id_seq OWNED BY resolucion_miembros.id;
 ALTER TABLE ONLY resolucion_miembros ALTER COLUMN id SET DEFAULT nextval('resolucion_miembros_id_seq');
-

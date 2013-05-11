@@ -120,7 +120,7 @@ ALTER TABLE ONLY permiso
     ADD CONSTRAINT fk_permiso_recurso FOREIGN KEY (id_recurso)
     references recurso (id);
 ALTER TABLE ONLY permiso
-    ADD CONSTRAINT uq_permiso_codigo UNIQUE (codigo);
+    ADD CONSTRAINT uq_permiso UNIQUE (codigo, id_recurso);
 
 CREATE SEQUENCE permiso_id_seq
     START WITH 1

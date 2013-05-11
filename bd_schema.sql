@@ -161,8 +161,8 @@ CREATE TABLE tipo_item (
 
 ALTER TABLE ONLY tipo_item
     ADD CONSTRAINT pk_tipo_item PRIMARY KEY (id);
-ALTER TABLE ONLY rol
-    ADD CONSTRAINT uq_rol_codigo UNIQUE (codigo);
+ALTER TABLE ONLY tipo_item
+    ADD CONSTRAINT uq_tipoitem_codigo UNIQUE (codigo);
 
 ALTER TABLE ONLY tipo_item
     ADD CONSTRAINT fk_tipoItem_fase FOREIGN KEY (id_fase)

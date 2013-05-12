@@ -262,8 +262,7 @@ CREATE TABLE usuario_rol (
     id integer NOT NULL,
     id_rol integer NOT NULL,
     id_usuario integer NOT NULL,
-    nombre character varying(50) NOT NULL,
-    descripcion character varying(100) NOT NULL
+    id_proyecto integer NOT NULL,
 );
 
 ALTER TABLE ONLY usuario_rol
@@ -274,6 +273,9 @@ ALTER TABLE ONLY usuario_rol
 ALTER TABLE ONLY usuario_rol
     ADD CONSTRAINT fk_usuarioRol_usu FOREIGN KEY (id_usuario)
     references usuario (id);
+ALTER TABLE ONLY usuario_rol
+    ADD CONSTRAINT fk_usuarioRol_pro FOREIGN KEY (id_proyecto)
+    references proyecto (id);
 
 
 CREATE SEQUENCE usuario_rol_id_seq

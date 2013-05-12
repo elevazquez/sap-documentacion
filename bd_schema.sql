@@ -327,6 +327,8 @@ ALTER TABLE ONLY relacion
 ALTER TABLE ONLY relacion
     ADD CONSTRAINT fk_relacion_itemDuenho FOREIGN KEY (id_item_duenho)
     references item (id);
+ALTER TABLE ONLY relacion
+	CONSTRAINT uq_relacion UNIQUE (id_item , id_item_duenho );
 
 CREATE SEQUENCE relacion_id_seq
     START WITH 1

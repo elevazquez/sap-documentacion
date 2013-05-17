@@ -380,6 +380,8 @@ ALTER TABLE ONLY rol_permiso
 ALTER TABLE ONLY rol_permiso
     ADD CONSTRAINT fk_rolPermiso_permiso FOREIGN KEY (id_permiso)
     references permiso (id);
+ALTER TABLE ONLY rol_permiso
+    ADD CONSTRAINT uq_rolPermiso UNIQUE (id_rol, id_permiso)
 
 CREATE SEQUENCE rol_permiso_id_seq
     START WITH 1

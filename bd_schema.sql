@@ -292,7 +292,8 @@ CREATE TABLE tipo_relacion (
     id integer NOT NULL,
     codigo character varying(50) NOT NULL,
     nombre character varying(50) NOT NULL,
-    descripcion character varying(100) NOT NULL
+    descripcion character varying(100) NOT NULL,
+    estado character(1) NOT NULL
 );
 
 ALTER TABLE ONLY tipo_relacion

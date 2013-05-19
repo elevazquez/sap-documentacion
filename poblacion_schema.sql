@@ -1,35 +1,21 @@
-INSERT INTO tipo_atributo (codigo, nombre, descripcion) VALUES
-('INTEGER', 'Número entero', 'Tipo número entero'),
-('BOOLEAN', 'Valor booleano', 'Valor booleano'),
-('STRING', 'Cadena', 'Tipo cadena'),
-('DOUBLE', 'Número decimal', 'Número decimal'),
-('DATE', 'Fecha', 'Tipo fecha sin tiempo'),
-('CHARACTER', 'Caracter', 'Tipo carácter de longitud 1');
+INSERT INTO tipo_atributo (id, codigo, nombre, descripcion) VALUES
+(1, 'INTEGER', 'Número entero', 'Tipo número entero'),
+(2, 'BOOLEAN', 'Valor booleano', 'Valor booleano'),
+(3, 'STRING', 'Cadena', 'Tipo cadena'),
+(4, 'DOUBLE', 'Número decimal', 'Número decimal'),
+(5, 'DATE', 'Fecha', 'Tipo fecha sin tiempo'),
+(6, 'CHARACTER', 'Caracter', 'Tipo carácter de longitud 1');
 
-INSERT INTO atributo (id_tipo_atributo, codigo, nombre, descripcion) VALUES
-(, '', '', '', ''),
-(, '', '', '', ''),
-(, '', '', '', ''),
-(, '', '', '', ''),
-(, '', '', '', ''),
-(, '', '', '', '');
+INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
+(1, 3, 'OBSERVACION', 'Observacion sobre el item');
 
 
-INSERT INTO usuario (usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
-('', '', '', '', '', '', '', ''),
-('', '', '', '', '', '', '', ''),
-('', '', '', '', '', '', '', ''),
-('', '', '', '', '', '', '', ''),
-('', '', '', '', '', '', '', ''),
-('', '', '', '', '', '', '', '');
+INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
+(1, 'admin', 'Administrador', 'principal', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', 'San Lorenzo', '12345', '30/12/1990'),
+(2, 'lider','lider','proyecto','21232f297a57a5a743894a0e4a801fc3', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
 
-INSERT INTO proyecto (id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
-(, '', '', '', '', '', '', ''),
-(, '', '', '', '', '', '', ''),
-(, '', '', '', '', '', '', ''),
-(, '', '', '', '', '', '', ''),
-(, '', '', '', '', '', '', ''),
-(, '', '', '', '', '', '', '');
+INSERT INTO proyecto (id,id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
+(1, '2', 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
 
 INSERT INTO fase (nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, id_proyecto) VALUES
 (, '', '', '', '', '', ''),

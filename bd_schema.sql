@@ -241,13 +241,14 @@ ALTER TABLE ONLY linea_base ALTER COLUMN id SET DEFAULT nextval('linea_base_id_s
 
 CREATE TABLE tipo_atributo (
     id integer NOT NULL,
-    codigo character varying(50) NOT NULL,
     nombre character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL
 );
 
 ALTER TABLE ONLY tipo_atributo
     ADD CONSTRAINT pk_tipo_atributo PRIMARY KEY (id);
+ALTER TABLE ONLY tipo_atributo
+    ADD CONSTRAINT uq_tipo_atributo UNIQUE (nombre);
 
 CREATE SEQUENCE tipo_atributo_id_seq
     START WITH 1
@@ -407,6 +408,8 @@ ALTER TABLE ONLY atributo
 ALTER TABLE ONLY atributo
     ADD CONSTRAINT fk_atributo_tipoAtributo FOREIGN KEY (id_tipo_atributo)
     references tipo_atributo (id);
+ALTER TABLE ONLY atributo
+    ADD CONSTRAINT uq_atributo UNIQUE (nombre);
 
 CREATE SEQUENCE atributo_id_seq
     START WITH 1

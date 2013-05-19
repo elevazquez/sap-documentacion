@@ -81,46 +81,20 @@ ALTER SEQUENCE fase_id_seq OWNED BY fase.id;
 ALTER TABLE ONLY fase ALTER COLUMN id SET DEFAULT nextval('fase_id_seq');
 
 
-CREATE TABLE recurso (
-    id integer NOT NULL,
-    nombre character varying(100) NOT NULL,
-    id_fase integer,
-    id_proyecto integer
-);
-
-ALTER TABLE public.recurso OWNER TO postgres;
-ALTER TABLE ONLY recurso
-    ADD CONSTRAINT pk_recurso PRIMARY KEY (id);
-ALTER TABLE ONLY recurso
-    ADD CONSTRAINT fk_recurso_proyecto FOREIGN KEY (id_proyecto)
-    references proyecto (id);
-ALTER TABLE ONLY recurso
-    ADD CONSTRAINT fk_recurso_fase FOREIGN KEY (id_fase)
-    references fase (id);
-
-CREATE SEQUENCE recurso_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    MINVALUE 1;
-
-ALTER SEQUENCE recurso_id_seq OWNED BY recurso.id;
-ALTER TABLE ONLY recurso ALTER COLUMN id SET DEFAULT nextval('recurso_id_seq');
-
-
 CREATE TABLE permiso (
     id integer NOT NULL,
     codigo character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL,
-    id_recurso integer NOT NULL
+    id_fase integer NOT NULL
 );
 
 ALTER TABLE ONLY permiso
     ADD CONSTRAINT pk_permiso PRIMARY KEY (id);
 ALTER TABLE ONLY permiso
-    ADD CONSTRAINT fk_permiso_recurso FOREIGN KEY (id_recurso)
-    references recurso (id);
+    ADD CONSTRAINT fk_permiso_fase FOREIGN KEY (id_fase)
+    references fase (id);
 ALTER TABLE ONLY permiso
-    ADD CONSTRAINT uq_permiso UNIQUE (codigo, id_recurso);
+    ADD CONSTRAINT uq_permiso UNIQUE (codigo);
 
 CREATE SEQUENCE permiso_id_seq
     START WITH 1

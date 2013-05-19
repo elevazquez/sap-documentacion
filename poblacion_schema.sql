@@ -1,10 +1,10 @@
-INSERT INTO tipo_atributo (id, codigo, nombre, descripcion) VALUES
-(1, 'INTEGER', 'Número entero', 'Tipo número entero'),
-(2, 'BOOLEAN', 'Valor booleano', 'Valor booleano'),
-(3, 'STRING', 'Cadena', 'Tipo cadena'),
-(4, 'DOUBLE', 'Número decimal', 'Número decimal'),
-(5, 'DATE', 'Fecha', 'Tipo fecha sin tiempo'),
-(6, 'CHARACTER', 'Caracter', 'Tipo carácter de longitud 1');
+INSERT INTO tipo_atributo (id, nombre, descripcion) VALUES
+(1, 'INTEGER', 'Número entero'),
+(2, 'BOOLEAN', 'Valor booleano'),
+(3, 'STRING', 'Cadena'),
+(4, 'DOUBLE', 'Número decimal'),
+(5, 'DATE', 'Fecha'),
+(6, 'CHARACTER', 'Caracter');
 
 INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
 (1, 3, 'OBSERVACION', 'Observacion sobre el item');
@@ -187,11 +187,11 @@ INSERT INTO resolucion_miembros (id_solicitud_cambio, id_usuario, voto) VALUES
 (, '', '', ''),
 (, '', '', '');
 
-INSERT INTO rol (codigo, descripcion) VALUES
-('ADMINISTRADOR', ''),
-('LIDER PROYECTO', ''),
-('COMITE CAMBIOS', ''),
-('ADMINISTRADOR ITEM', '');
+INSERT INTO rol (id, codigo, descripcion) VALUES
+(1, 'ADMINISTRADOR', 'Administrador del sistema'),
+(2, 'LIDER PROYECTO', 'Lider de un proyecto'),
+(3, 'COMITE CAMBIOS', 'Miembro de comite de cambios'),
+(4, 'ADMINISTRADOR ITEM', 'Administrador de items');
 
 INSERT INTO rol_permiso (id_rol, id_permiso) VALUES
 (, ),

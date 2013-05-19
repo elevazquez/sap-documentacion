@@ -267,8 +267,7 @@ CREATE TABLE tipo_relacion (
     id integer NOT NULL,
     codigo character varying(50) NOT NULL,
     nombre character varying(50) NOT NULL,
-    descripcion character varying(100) NOT NULL,
-    estado character(1) NOT NULL
+    descripcion character varying(100) NOT NULL
 );
 
 ALTER TABLE ONLY tipo_relacion
@@ -292,7 +291,8 @@ CREATE TABLE relacion (
     id_item integer NOT NULL,
     id_item_duenho integer NOT NULL,
     fecha_creacion date,
-    fecha_modificacion date
+    fecha_modificacion date,
+    estado character(1) NOT NULL default 'A'::bpchar
 );
 
 ALTER TABLE ONLY relacion
@@ -307,7 +307,7 @@ ALTER TABLE ONLY relacion
     ADD CONSTRAINT fk_relacion_itemDuenho FOREIGN KEY (id_item_duenho)
     references item (id);
 ALTER TABLE ONLY relacion
-	CONSTRAINT uq_relacion UNIQUE (id_item , id_item_duenho );
+    ADD CONSTRAINT uq_relacion UNIQUE (id_item , id_item_duenho );
 
 CREATE SEQUENCE relacion_id_seq
     START WITH 1
@@ -357,7 +357,7 @@ ALTER TABLE ONLY rol_permiso
     ADD CONSTRAINT fk_rolPermiso_permiso FOREIGN KEY (id_permiso)
     references permiso (id);
 ALTER TABLE ONLY rol_permiso
-    ADD CONSTRAINT uq_rolPermiso UNIQUE (id_rol, id_permiso)
+    ADD CONSTRAINT uq_rolPermiso UNIQUE (id_rol, id_permiso);
 
 CREATE SEQUENCE rol_permiso_id_seq
     START WITH 1
@@ -372,7 +372,6 @@ ALTER TABLE ONLY rol_permiso ALTER COLUMN id SET DEFAULT nextval('rol_permiso_id
 CREATE TABLE atributo (
     id integer NOT NULL,
     id_tipo_atributo integer NOT NULL,
-    codigo character varying(50) NOT NULL,
     nombre character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL
 );

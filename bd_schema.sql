@@ -237,7 +237,7 @@ CREATE TABLE usuario_rol (
     id integer NOT NULL,
     id_rol integer NOT NULL,
     id_usuario integer NOT NULL,
-    id_proyecto integer NOT NULL
+    id_proyecto integer
 );
 
 ALTER TABLE ONLY usuario_rol

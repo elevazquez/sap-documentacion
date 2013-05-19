@@ -14,8 +14,8 @@ INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio,
 (1, 'admin', 'Administrador', 'principal', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', 'San Lorenzo', '12345', '30/12/1990'),
 (2, 'lider','lider','proyecto','21232f297a57a5a743894a0e4a801fc3', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
 
-INSERT INTO proyecto (id,id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
-(1, '2', 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
+INSERT INTO proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
+(1, 2, 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
 
 INSERT INTO fase (nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, id_proyecto) VALUES
 (, '', '', '', '', '', ''),
@@ -217,10 +217,5 @@ INSERT INTO titem_atributo (id_tipo_item, id_atributo) VALUES
 (, '', '', ''),
 (, '', '', '');
 
-INSERT INTO usuario_rol (id_rol, id_usuario, nombre, descripcion, id_proyecto) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
+INSERT INTO usuario_rol (id, id_rol, id_usuario, id_proyecto) VALUES
+(1, 1, 1, NULL);

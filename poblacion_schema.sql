@@ -7,7 +7,9 @@ INSERT INTO tipo_atributo (id, nombre, descripcion) VALUES
 (6, 'CHARACTER', 'Caracter');
 
 INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
-(1, 3, 'OBSERVACION', 'Observacion sobre el item');
+(1, 3, 'OBSERVACION', 'Observacion sobre el item'),
+(3, 3, 'TAREA REALIZADA', 'Comentario de lo realizado en la modificacion'),
+(2, 4, 'TIEMPO DEDICADO', 'Cantidad en horas del tiempo dedicado')
 
 
 INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
@@ -218,4 +220,5 @@ INSERT INTO titem_atributo (id_tipo_item, id_atributo) VALUES
 (, '', '', '');
 
 INSERT INTO usuario_rol (id, id_rol, id_usuario, id_proyecto) VALUES
-(1, 1, 1, NULL);
+(1, 1, 1, NULL),
+(2, 2, 2, 1);

@@ -19,21 +19,18 @@ INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio,
 INSERT INTO proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
 (1, 2, 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
 
-INSERT INTO fase (nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, id_proyecto) VALUES
-(, '', '', '', '', '', ''),
-(, '', '', '', '', '', ''),
-(, '', '', '', '', '', ''),
-(, '', '', '', '', '', ''),
-(, '', '', '', '', '', ''),
-(, '', '', '', '', '', '');
+INSERT INTO fase (id, nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, id_proyecto) VALUES
+(1, 1, 'P', 'Analisis', 'Recoleccion de requerimientos', '2013-05-21', '2013-05-31', 1),
+(2, 2, 'P', 'Diseño', 'Diseño segun el analisis";"2013-06-20";"2014-06-30", 1),
+(3, 3, 'I', 'Desarrollo', 'Desarrollo en base a los requerimientos', '2013-07-01','2013-12-31',1),
+(4, 4, 'I', 'Pruebas', 'Pruebas en la empresa', '2013-12-02', '2014-01-30', 1),
+(5, 5, 'I', 'Depuracion', 'Depuracion del sistema', '2014-01-02', '2014-02-28', 1),
+(6, 6, 'I', 'Implementacion', 'Implementacion del sistema', '2014-03-04', '2014-04-30', 1);
 
-INSERT INTO tipo_item (id_fase, codigo, nombre, descripcion) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
+INSERT INTO tipo_item (id, id_fase, codigo, nombre, descripcion) VALUES
+(1, 1, 'RELEVAMIENTO DE DATOS', 'RELEVAMIENTO DE DATOS', 'Relevamiento de datos generales'),
+(2, 1, 'ENTREVISTA', 'ENTREVISTA', 'Entrevista a funcionarios'),
+(3, 2, 'CASOS DE USOS', 'CASOS DE USOS', 'Aspectos relacionados a caso de usos');
 
 INSERT INTO item (id_usuario, id_fase, id_tipo_item, version, codigo, nombre, descripcion, estado, complejidad, fecha, costo, archivo, mime) VALUES
 (, , , '', '', ''),

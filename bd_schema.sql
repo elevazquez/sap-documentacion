@@ -446,6 +446,7 @@ ALTER TABLE ONLY item_atributo ALTER COLUMN id SET DEFAULT nextval('item_atribut
 CREATE TABLE solicitud_cambio(
     id integer NOT NULL,
     id_usuario integer NOT NULL,
+    id_proyecto integer NOT NULL,
     fecha date NOT NULL,
     estado character(1) NOT NULL,
     descripcion character varying NOT NULL,
@@ -457,6 +458,9 @@ ALTER TABLE ONLY solicitud_cambio
 ALTER TABLE ONLY solicitud_cambio
     ADD CONSTRAINT fk_solicitudCambio_usuario FOREIGN KEY (id_usuario)
     references usuario (id);
+ALTER TABLE ONLY solicitud_cambio
+    ADD CONSTRAINT fk_solicitudCambio_proyecto FOREIGN KEY (id_proyecto)
+    references proyecto (id);
 
 CREATE SEQUENCE solicitud_cambio_id_seq
     START WITH 1

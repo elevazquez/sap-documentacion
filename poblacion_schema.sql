@@ -72,86 +72,73 @@ INSERT INTO miembros_comite (id_proyecto, id_usuario) VALUES
 (, '', '', ''),
 (, '', '', '');
 
-INSERT INTO recurso (nombre, id_fase, id_proyecto) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
-
+--administracion de permiso solo lo realiza un administrador
+--('CONSULTAR PERMISO', 'Permite visualizar los permisos existentes', NULL),
+--('VER PERMISO', 'Permite visualizar los datos del permiso', NULL),
+--('BUSCAR PERMISO', 'Permite buscar los permisos', NULL),
+--('EDITAR PERMISO', 'Permite editar datos del proyecto', NULL);
+--('ELIMINAR PERMISO', 'Permite eliminar una fase', NULL),
+--('VER USUARIO P1', 'Permite visualizar los datos de un usuario', NULL),
+--('BUSCAR USUARIO P1', 'Permite buscar los usuarios', NULL),
+--('ASIGNAR/DESASIGNAR ROL P1', 'Permite asignar y desasignar roles a un usuario', NULL),
+--('CONSULTAR ROL', 'Permite visualizar los roles existentes', NULL),
+--('VER ROL', 'Permite visualizar los datos del rol', NULL),
+--('BUSCAR ROL', 'Permite buscar los roles', NULL),
+--('ASIGNAR/DESASIGNAR PERMISO', 'Permite asignar y desasignar permisos a un rol', NULL),
+--('CONSULTAR PROYECTO', 'Permite visualizar los proyectos existentes', NULL),
+--('VER PROYECTO', 'Permite visualizar los datos del proyecto', NULL),
+--('BUSCAR PROYECTO', 'Permite buscar los proyectos', NULL),
+--('EDITAR PROYECTO', 'Permite editar datos del proyecto', NULL),
 INSERT INTO permiso (codigo, descripcion, id_fase) VALUES
-('CONSULTAR PROYECTO P1', 'Permite visualizar los proyectos existentes', NULL),
-('VER PROYECTO P1', 'Permite visualizar los datos del proyecto', NULL),
-('BUSCAR PROYECTO P1', 'Permite buscar los proyectos', NULL),
-('EDITAR PROYECTO P1', 'Permite editar datos del proyecto', NULL),
-
-('CONSULTAR FASE P1', 'Permite visualizar las fases existentes', NULL),
+--para lider de proyecto
+('CONSULTAR USUARIO P1', 'Permite visualizar los usuarios existentes', NULL),
+('CONSULTAR COMITE DE CAMBIO P1', 'Permite visualizar los miembros de un comite existente', NULL),
+('CREAR COMITE DE CAMBIO P1', 'Permite crear un miembro comite de cambio', NULL),
+('ELIMINAR COMITE DE CAMBIO P1', 'Permite eliminar un miembro del comite', NULL),
+('BUSCAR COMITE DE CAMBIO P1', 'Permite buscar los miembros de un comite de cambio', NULL),
+('CONSULTAR LINEA BASE P1', 'Permite visualizar las lineas bases existentes', NULL), --para UN MIEMBRO
+('CREAR LINEA BASE P1', 'Permite crear una linea base', NULL),
+('LIBERAR LINEA BASE P1', 'Permite liberar una linea base', NULL),
+('BUSCAR LINEA BASE P1', 'Permite buscar las lineas bases', NULL), --para UN MIEMBRO
+('EDITAR LINEA BASE P1', 'Permite editar datos de la linea base', NULL),
+('CONSULTAR FASE P1', 'Permite visualizar las fases existentes', NULL), --para un MIEMBRO
 ('CREAR FASE P1', 'Permite crear una fase', NULL);
-('VER FASE P1', 'Permite visualizar los datos de la fase', NULL),
 ('ELIMINAR FASE P1', 'Permite eliminar una fase', NULL),
-('BUSCAR FASE P1', 'Permite buscar las fases', NULL),
+('BUSCAR FASE P1', 'Permite buscar las fases', NULL), --para un MIEMBRO COMITE
 ('EDITAR FASE P1', 'Permite editar datos de la fase', NULL),
 ('FINALIZAR FASE P1', 'Permite finlizar una fase', NULL),
 ('IMPORTAR FASE P1', 'Permite importar los datos de un fase', NULL),
-
-('CONSULTAR ITEM F1', 'Permite visualizar los items existentes', 1),
-('CREAR ITEM F1', 'Permite crear un item', 1);
-('VER ITEM F1', 'Permite visualizar los datos de un item', 1),
-('ELIMINAR ITEM F1', 'Permite eliminar un item', 1),
-('BUSCAR ITEM F1', 'Permite buscar los items', 1),
-('EDITAR ITEM F1', 'Permite editar datos del item', 1),
-('REVERSION ITEM F1', 'Permite volver a una version anterior un item', 1),
-('REVIVIR ITEM F1', 'Permite revivir un item eliminado', 1),
-
-('CONSULTAR USUARIO P1', 'Permite visualizar los usuarios existentes', NULL),
-('VER USUARIO P1', 'Permite visualizar los datos de un usuario', NULL),
-('BUSCAR USUARIO P1', 'Permite buscar los usuarios', NULL),
-('ASIGNAR/DESASIGNAR ROL P1', 'Permite asignar y desasignar roles a un usuario', NULL),
-
-('CONSULTAR ROL', 'Permite visualizar los roles existentes', NULL),
-('VER ROL', 'Permite visualizar los datos del rol', NULL),
-('BUSCAR ROL', 'Permite buscar los roles', NULL),
-('ASIGNAR/DESASIGNAR PERMISO', 'Permite asignar y desasignar permisos a un rol', NULL),
-
-('CONSULTAR PERMISO', 'Permite visualizar los permisos existentes', NULL),
-('VER PERMISO', 'Permite visualizar los datos del permiso', NULL),
-('BUSCAR PERMISO', 'Permite buscar los permisos', NULL),
-
-('CONSULTAR COMITE DE CAMBIO', 'Permite visualizar los miembros de cun comite existente', NULL),
-('CREAR COMITE DE CAMBIO', 'Permite crear un miembro comite de cambio', NULL),
-('ELIMINAR COMITE DE CAMBIO', 'Permite eliminar un miembro del comite', NULL),
-('BUSCAR COMITE DE CAMBIO', 'Permite buscar los miembros de un comite de cambio', NULL),
-
-('CONSULTAR LINEA BASE', 'Permite visualizar las lineas bases existentes', NULL),
-('CREAR LINEA BASE', 'Permite crear una linea base', NULL),
-('VER LINEA BASE', 'Permite visualizar los datos de la linea base', NULL),
-('LIBERAR LINEA BASE', 'Permite liberar una linea base', NULL),
-('BUSCAR LINEA BASE', 'Permite buscar las lineas bases', NULL),
-('EDITAR LINEA BASE', 'Permite editar datos de la linea base', NULL),
-
+('CONSULTAR TIPO ITEM P1', 'Permite visualizar los tipos de items existentes', NULL), --para un MIEMBRO COMITE
+('CREAR TIPO ITEM P1', 'Permite crear un tipo de item', NULL),
+('ELIMINAR TIPO ITEM P1', 'Permite eliminar un tipo item', NULL),
+('BUSCAR TIPO ITEM P1', 'Permite buscar los tipos de item', NULL), --para un MIEMBRO COMITE
+('EDITAR TIPO ITEM P1', 'Permite editar los datos de un tipo de item', NULL),
+('IMPORTAR TIPO ITEM P1', 'Permite importar los datos de un tipo item', NULL),
 ('CONSULTAR TIPO ATRIBUTO', 'Permite visualizar los tipos de atributos existentes', NULL),
 ('CREAR TIPO ATRIBUTO', 'Permite crear un tipo de atributo', NULL),
 ('VER TIPO ATRIBUTO', 'Permite visualizar los datos de un tipo atributo', NULL),
 ('ELIMINAR TIPO ATRIBUTO', 'Permite eliminar un tipo atributo', NULL),
 ('BUSCAR TIPO ATRIBUTO', 'Permite buscar los tipos de atributo', NULL),
 ('EDITAR TIPO ATRIBUTO', 'Permite editar los datos del tipo atributo', NULL),
-
-('CONSULTAR ATRIBUTO', 'Permite visualizar los atributos existentes', NULL),
-('CREAR ATRIBUTO', 'Permite crear un atributo', NULL),
-('VER ATRIBUTO', 'Permite visualizar los datos de un atributo', NULL),
-('ELIMINAR ATRIBUTO', 'Permite eliminar un atributo', NULL),
-('BUSCAR ATRIBUTO', 'Permite buscar los atributos', NULL),
-('EDITAR ATRIBUTO', 'Permite editar los datos de un atributo', NULL),
-
-('CONSULTAR TIPO ITEM F1', 'Permite visualizar los tipos de items existentes', 1),
-('CREAR TIPO ITEM F1', 'Permite crear un tipo de item', 1),
-('VER TIPO ITEM F1', 'Permite visualizar los datos de un tipo item', 1),
-('ELIMINAR TIPO ITEM F1', 'Permite eliminar un tipo item', 1),
-('BUSCAR TIPO ITEM F1', 'Permite buscar los tipos de item', 1),
-('EDITAR TIPO ITEM F1', 'Permite editar los datos de un tipo de item', 1),
-('IMPORTAR TIPO ITEM F1', 'Permite importar los datos de un tipo item', 1),
-
+('CONSULTAR ATRIBUTO P1', 'Permite visualizar los atributos existentes', NULL),
+('CREAR ATRIBUTO P1', 'Permite crear un atributo', NULL),
+('VER ATRIBUTO P1', 'Permite visualizar los datos de un atributo', NULL),
+('ELIMINAR ATRIBUTO P1', 'Permite eliminar un atributo', NULL),
+('BUSCAR ATRIBUTO P1', 'Permite buscar los atributos', NULL),
+('EDITAR ATRIBUTO P1', 'Permite editar los datos de un atributo', NULL),
+--para un MIEMBRO COMITE
+('VER LINEA BASE P1', 'Permite visualizar los datos de la linea base', NULL),
+('VER FASE P1', 'Permite visualizar los datos de la fase', NULL),
+('VER ITEM P1', 'Permite visualizar los datos de un item', NULL),
+('VER TIPO ITEM P1', 'Permite visualizar los datos de un tipo item', NULL),
+--para un usuario de fase o proyecto
+('CONSULTAR ITEM F1', 'Permite visualizar los items existentes', 1), --para un MIEMBRO COMITE
+('CREAR ITEM F1', 'Permite crear un item', 1);
+('ELIMINAR ITEM F1', 'Permite eliminar un item', 1),
+('BUSCAR ITEM F1', 'Permite buscar los items', 1), --para un MIEMBRO COMITE
+('EDITAR ITEM F1', 'Permite editar datos del item', 1),
+('REVERSION ITEM F1', 'Permite volver a una version anterior un item', 1),
+('REVIVIR ITEM F1', 'Permite revivir un item eliminado', 1),
 ('CONSULTAR RELACION F1', 'Permite visualizar las relaciones existentes', 1),
 ('CREAR RELACION F1', 'Permite crear una relacion', 1),
 ('VER RELACION F1', 'Permite visualizar los datos de una relacion', 1),

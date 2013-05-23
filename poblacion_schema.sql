@@ -13,8 +13,8 @@ INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
 
 INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
 (1, 'admin', 'Administrador', 'principal', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', 'San Lorenzo', '12345', '30/12/1990'),
-(2, 'lider','lider','proyecto','21232f297a57a5a743894a0e4a801fc3', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
-(3, 'desarrollador','desarrollador','proyecto','21232f297a57a5a743894a0e4a801fc3', 'desarrollador@desarrollador.com', 'San Lorenzo', '12345', '30/12/1990');
+(2, 'lider','lider','proyecto','64ff9e4a58fe52fb1a55987f34bc979d', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
+(3, 'desarrollador','desarrollador','proyecto','e54cc06625bbadf12163b41a3cb92bf8', 'desarrollador@desarrollador.com', 'San Lorenzo', '12345', '30/12/1990');
 
 INSERT INTO proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
 (1, 2, 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
@@ -149,7 +149,7 @@ INSERT INTO tipo_relacion (id, codigo, nombre, descripcion) VALUES
 (1, 'Padre Hijo','Relacion de padre a hijo','Relacion que se crea cuando los items son de la misma fase'),
 (2, 'Antecesor Sucesor','Relacion de antecesor y sucesor','Relacion que se crea cuando los items son de diferentes fase');
 
-INSERT INTO relacion (id,id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fecha_modificacion, estado) VALUES
+INSERT INTO relacion (id, id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fecha_modificacion, estado) VALUES
 (1, 1, 1, 2, '20-05-2013',NULL, 'A'),
 (2, 1, 1, 3, '20-05-2013',NULL, 'A'),
 (3, 2, 2, 4, '28-06-2013',NULL, 'A'),

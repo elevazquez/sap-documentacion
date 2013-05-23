@@ -8,13 +8,13 @@ INSERT INTO tipo_atributo (id, nombre, descripcion) VALUES
 
 INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
 (1, 3, 'OBSERVACION', 'Observacion sobre el item'),
-(3, 3, 'TAREA REALIZADA', 'Comentario de lo realizado en la modificacion'),
-(2, 4, 'TIEMPO DEDICADO', 'Cantidad en horas del tiempo dedicado')
-
+(2, 4, 'TIEMPO DEDICADO', 'Cantidad en horas del tiempo dedicado'),
+(3, 3, 'TAREA REALIZADA', 'Comentario de lo realizado en la modificacion');
 
 INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
 (1, 'admin', 'Administrador', 'principal', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', 'San Lorenzo', '12345', '30/12/1990'),
 (2, 'lider','lider','proyecto','21232f297a57a5a743894a0e4a801fc3', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
+(3, 'desarrollador','desarrollador','proyecto','21232f297a57a5a743894a0e4a801fc3', 'desarrollador@desarrollador.com', 'San Lorenzo', '12345', '30/12/1990');
 
 INSERT INTO proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
 (1, 2, 'N', 'SistemaRIOS', 'Sistema de administración', 3, '10/05/2013', NULL, NULL );
@@ -30,23 +30,22 @@ INSERT INTO fase (id, nro_orden, estado, nombre, descripcion, fecha_inicio, fech
 INSERT INTO tipo_item (id, id_fase, codigo, nombre, descripcion) VALUES
 (1, 1, 'RELEVAMIENTO DE DATOS', 'RELEVAMIENTO DE DATOS', 'Relevamiento de datos generales'),
 (2, 1, 'ENTREVISTA', 'ENTREVISTA', 'Entrevista a funcionarios'),
-(3, 2, 'CASOS DE USOS', 'CASOS DE USOS', 'Aspectos relacionados a caso de usos');
+(3, 2, 'CASOS DE USOS', 'CASOS DE USOS', 'Aspectos relacionados a caso de usos'),
+(4);
 
-INSERT INTO item (id_usuario, id_fase, id_tipo_item, version, codigo, nombre, descripcion, estado, complejidad, fecha, costo, archivo, mime) VALUES
-(, , , '', '', ''),
-(, , , '', '', ''),
-(, , , '', '', ''),
-(, , , '', '', ''),
-(, , , '', '', ''),
-(, , , '', '', '');
+INSERT INTO item (id, id_usuario, id_fase, id_tipo_item, version, codigo, nombre, descripcion, estado, complejidad, fecha, costo, archivo, mime) VALUES
+(1, 3, 1, 1, 1, 'OBTENREQUERIMIE', 'Obtener requerimientos','Obtener requerimientos','A',2,'23-05-2013',30000,NULL,NULL ),
+(2, 3, 1, 2, 1, 'ENTREGERGRAL', 'Entrevista a gerentes generales','Entrevista a gerentes generales','A',2,'23-05-2013',30000,NULL,NULL ),
+(3, 3, 1, 2, 1, 'ENTRECAJE', 'Entrevista a cajeros','Entrevista a cajeros','A',2,'30-05-2013',30000,NULL,NULL ),
+(4, 3, 2, 1, 1, 'CREARPROCESOS', 'Creacion de procesos de tareas','Creacion de procesos de tareas','A',2,'20-06-2013',30000,NULL,NULL ),
+(5, 3, 2, 1, 1, 'DEPURPROCESO', 'Depurar procesos de tareas','Depurar procesos de tareas','A',2,'25-06-2013',30000,NULL,NULL );
 
 INSERT INTO item_atributo (id_item, id_atributo, valor) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
+(1, 1, 2, '30'),
+(2, 1, 3, 'Se inicia relevamiento'),
+(3, 2, 2, '30'),
+(4, 2, 3, 'Se inicia entrevista con 10 personas');
+
 
 INSERT INTO linea_base (estado, descripcion, fecha_creacion, fecha_ruptura) VALUES
 (, '', '', ''),
@@ -91,6 +90,7 @@ INSERT INTO miembros_comite (id_proyecto, id_usuario) VALUES
 --('EDITAR PROYECTO', 'Permite editar datos del proyecto', NULL),
 INSERT INTO permiso (codigo, descripcion, id_fase) VALUES
 --para lider de proyecto
+('INICIAR PROYECTO P1')
 ('CONSULTAR USUARIO P1', 'Permite visualizar los usuarios existentes', NULL),
 ('CONSULTAR COMITE DE CAMBIO P1', 'Permite visualizar los miembros de un comite existente', NULL),
 ('CREAR COMITE DE CAMBIO P1', 'Permite crear un miembro comite de cambio', NULL),
@@ -145,19 +145,17 @@ INSERT INTO permiso (codigo, descripcion, id_fase) VALUES
 ('ELIMINAR RELACION F1', 'Permite eliminar una relacion', 1),
 ('BUSCAR RELACION F1', 'Permite buscar las relaciones', 1);
 
-INSERT INTO tipo_relacion (codigo, nombre, descripcion) VALUES
-('Padre Hijo','Relacion de padre a hijo','Relacion que se crea cuando los items son de la misma fase'),
-('Antecesor Sucesor','Relacion de antecesor y sucesor','Relacion que se crea cuando los items son de diferentes fase');
+INSERT INTO tipo_relacion (id, codigo, nombre, descripcion) VALUES
+(1, 'Padre Hijo','Relacion de padre a hijo','Relacion que se crea cuando los items son de la misma fase'),
+(2, 'Antecesor Sucesor','Relacion de antecesor y sucesor','Relacion que se crea cuando los items son de diferentes fase');
 
-INSERT INTO relacion (id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fecha_modificacion, estado) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
+INSERT INTO relacion (id,id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fecha_modificacion, estado) VALUES
+(1, 1, 1, 2, '20-05-2013',NULL, 'A'),
+(2, 1, 1, 3, '20-05-2013',NULL, 'A'),
+(3, 2, 2, 4, '28-06-2013',NULL, 'A'),
+(4, 2, 3, 4, '28-06-2013',NULL, 'A');
 
-INSERT INTO solicitud_cambio (id_usuario, fecha, estado, descripcion, cant_votos) VALUES
+INSERT INTO solicitud_cambio (id_usuario, id_proyecto, fecha, estado, descripcion, cant_votos) VALUES
 (, '', '', ''),
 (, '', '', ''),
 (, '', '', ''),
@@ -205,4 +203,5 @@ INSERT INTO titem_atributo (id_tipo_item, id_atributo) VALUES
 
 INSERT INTO usuario_rol (id, id_rol, id_usuario, id_proyecto) VALUES
 (1, 1, 1, NULL),
-(2, 2, 2, 1);
+(2, 2, 2, 1),
+(3, 3, 3, 1);

@@ -30,15 +30,14 @@ INSERT INTO fase (id, nro_orden, estado, nombre, descripcion, fecha_inicio, fech
 INSERT INTO tipo_item (id, id_fase, codigo, nombre, descripcion) VALUES
 (1, 1, 'RELEVAMIENTO DE DATOS', 'RELEVAMIENTO DE DATOS', 'Relevamiento de datos generales'),
 (2, 1, 'ENTREVISTA', 'ENTREVISTA', 'Entrevista a funcionarios'),
-(3, 2, 'CASOS DE USOS', 'CASOS DE USOS', 'Aspectos relacionados a caso de usos'),
-(4);
+(3, 2, 'CASOS DE USOS', 'CASOS DE USOS', 'Aspectos relacionados a caso de usos');
 
 INSERT INTO item (id, id_usuario, id_fase, id_tipo_item, version, codigo, nombre, descripcion, estado, complejidad, fecha, costo, archivo, mime) VALUES
-(1, 3, 1, 1, 1, 'OBTENREQUERIMIE', 'Obtener requerimientos','Obtener requerimientos','A',2,'23-05-2013',30000,NULL,NULL ),
-(2, 3, 1, 2, 1, 'ENTREGERGRAL', 'Entrevista a gerentes generales','Entrevista a gerentes generales','A',2,'23-05-2013',30000,NULL,NULL ),
-(3, 3, 1, 2, 1, 'ENTRECAJE', 'Entrevista a cajeros','Entrevista a cajeros','A',2,'30-05-2013',30000,NULL,NULL ),
-(4, 3, 2, 1, 1, 'CREARPROCESOS', 'Creacion de procesos de tareas','Creacion de procesos de tareas','A',2,'20-06-2013',30000,NULL,NULL ),
-(5, 3, 2, 1, 1, 'DEPURPROCESO', 'Depurar procesos de tareas','Depurar procesos de tareas','A',2,'25-06-2013',30000,NULL,NULL );
+(1, 3, 1, 1, 1, 'OBTENREQUERIMIE', 'Obtener requerimientos','Obtener requerimientos','I',2,'23-05-2013',30000,NULL,NULL ),
+(2, 3, 1, 2, 1, 'ENTREGERGRAL', 'Entrevista a gerentes generales','Entrevista a gerentes generales','I',2,'23-05-2013',30000,NULL,NULL ),
+(3, 3, 1, 2, 1, 'ENTRECAJE', 'Entrevista a cajeros','Entrevista a cajeros','I',2,'30-05-2013',30000,NULL,NULL ),
+(4, 3, 2, 1, 1, 'CREARPROCESOS', 'Creacion de procesos de tareas','Creacion de procesos de tareas','I',2,'20-06-2013',30000,NULL,NULL ),
+(5, 3, 2, 1, 1, 'DEPURPROCESO', 'Depurar procesos de tareas','Depurar procesos de tareas','I',2,'25-06-2013',30000,NULL,NULL );
 
 INSERT INTO item_atributo (id_item, id_atributo, valor) VALUES
 (1, 1, 2, '30'),

@@ -13,7 +13,7 @@ INSERT INTO atributo (id, id_tipo_atributo, nombre, descripcion) VALUES
 
 INSERT INTO usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefono, fecha_nac) VALUES
 (1, 'admin', 'Administrador', 'principal', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', 'San Lorenzo', '12345', '30/12/1990'),
-(2, 'lider','lider','proyecto','64ff9e4a58fe52fb1a55987f34bc979d', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990');
+(2, 'lider','lider','proyecto','64ff9e4a58fe52fb1a55987f34bc979d', 'lider@lider.com', 'San Lorenzo', '12345', '30/12/1990'),
 (3, 'desarrollador','desarrollador','proyecto','e54cc06625bbadf12163b41a3cb92bf8', 'desarrollador@desarrollador.com', 'San Lorenzo', '12345', '30/12/1990');
 
 INSERT INTO proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) VALUES
@@ -39,7 +39,7 @@ INSERT INTO item (id, id_usuario, id_fase, id_tipo_item, version, codigo, nombre
 (4, 3, 2, 1, 1, 'CREARPROCESOS', 'Creacion de procesos de tareas','Creacion de procesos de tareas','I',2,'20-06-2013',30000,NULL,NULL ),
 (5, 3, 2, 1, 1, 'DEPURPROCESO', 'Depurar procesos de tareas','Depurar procesos de tareas','I',2,'25-06-2013',30000,NULL,NULL );
 
-INSERT INTO item_atributo (id_item, id_atributo, valor) VALUES
+INSERT INTO item_atributo (id, id_item, id_atributo, valor) VALUES
 (1, 1, 2, '30'),
 (2, 1, 3, 'Se inicia relevamiento'),
 (3, 2, 2, '30'),

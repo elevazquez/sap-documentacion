@@ -192,13 +192,11 @@ INSERT INTO solicitud_item (id_solicitud, id_item) VALUES
 (, ),
 (, );
 
-INSERT INTO titem_atributo (id,id_tipo_item, id_atributo) VALUES
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', ''),
-(, '', '', '');
+INSERT INTO titem_atributo (id, id_tipo_item, id_atributo) VALUES
+(1,1 ,2),
+(2, 1,3),
+(3, 2,2),
+(4, 2,3);
 
 INSERT INTO usuario_rol (id, id_rol, id_usuario, id_proyecto) VALUES
 (1, 1, 1, NULL),

@@ -82,6 +82,7 @@ ALTER TABLE ONLY fase ALTER COLUMN id SET DEFAULT nextval('fase_id_seq');
 
 CREATE TABLE recurso
 (
+  nombre character varying(100) NOT NULL,
   id integer NOT NULL,
   id_fase integer,
   id_proyecto integer,
@@ -92,7 +93,7 @@ CREATE TABLE recurso
   CONSTRAINT fk_recurso_proyecto FOREIGN KEY (id_proyecto)
       REFERENCES proyecto (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
+);
 
 CREATE SEQUENCE recurso_id_seq
     START WITH 1
@@ -106,14 +107,14 @@ CREATE TABLE permiso (
     id integer NOT NULL,
     codigo character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL,
-    id_fase integer
+    id_recurso integer NOT NULL
 );
 
 ALTER TABLE ONLY permiso
     ADD CONSTRAINT pk_permiso PRIMARY KEY (id);
 ALTER TABLE ONLY permiso
-    ADD CONSTRAINT fk_permiso_fase FOREIGN KEY (id_fase)
-    references fase (id);
+    ADD CONSTRAINT fk_permiso_recurso FOREIGN KEY (id_recurso)
+    references recurso (id);
 ALTER TABLE ONLY permiso
     ADD CONSTRAINT uq_permiso UNIQUE (codigo);
 

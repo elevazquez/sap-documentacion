@@ -92,7 +92,7 @@ CREATE TABLE recurso
   CONSTRAINT fk_recurso_proyecto FOREIGN KEY (id_proyecto)
       REFERENCES proyecto (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
+);
 
 CREATE SEQUENCE recurso_id_seq
     START WITH 1

@@ -80,6 +80,27 @@ CREATE SEQUENCE fase_id_seq
 ALTER SEQUENCE fase_id_seq OWNED BY fase.id;
 ALTER TABLE ONLY fase ALTER COLUMN id SET DEFAULT nextval('fase_id_seq');
 
+CREATE TABLE recurso
+(
+  id integer NOT NULL,
+  id_fase integer,
+  id_proyecto integer,
+  CONSTRAINT pk_recurso PRIMARY KEY (id ),
+  CONSTRAINT fk_recurso_fase FOREIGN KEY (id_fase)
+      REFERENCES fase (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_recurso_proyecto FOREIGN KEY (id_proyecto)
+      REFERENCES proyecto (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+
+CREATE SEQUENCE recurso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    MINVALUE 1;
+
+ALTER SEQUENCE recurso_id_seq OWNED BY recurso.id;
+ALTER TABLE ONLY recurso ALTER COLUMN id SET DEFAULT nextval('recurso_id_seq');
 
 CREATE TABLE permiso (
     id integer NOT NULL,

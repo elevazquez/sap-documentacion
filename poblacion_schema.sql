@@ -100,13 +100,13 @@ INSERT INTO permiso (codigo, descripcion, id_fase) VALUES
 ('LIBERAR LINEA BASE F1', 'Permite liberar una linea base', 1),
 ('BUSCAR LINEA BASE P1', 'Permite buscar las lineas bases', 1),
 ('EDITAR LINEA BASE F1', 'Permite editar datos de la linea base', 1),
-('CONSULTAR FASE P1', 'Permite visualizar las fases existentes', NULL), --para un MIEMBRO
-('CREAR FASE P1', 'Permite crear una fase', NULL);
-('ELIMINAR FASE P1', 'Permite eliminar una fase', NULL),
-('BUSCAR FASE P1', 'Permite buscar las fases', NULL), --para un MIEMBRO COMITE
-('EDITAR FASE P1', 'Permite editar datos de la fase', NULL),
-('FINALIZAR FASE P1', 'Permite finlizar una fase', NULL),
-('IMPORTAR FASE P1', 'Permite importar los datos de un fase', NULL),
+--('CONSULTAR FASE P1', 'Permite visualizar las fases existentes', NULL), --para un MIEMBRO
+--('CREAR FASE P1', 'Permite crear una fase', NULL);
+--('ELIMINAR FASE P1', 'Permite eliminar una fase', NULL),
+--('BUSCAR FASE P1', 'Permite buscar las fases', NULL), --para un MIEMBRO COMITE
+--('EDITAR FASE P1', 'Permite editar datos de la fase', NULL),
+--('FINALIZAR FASE P1', 'Permite finlizar una fase', NULL),
+--('IMPORTAR FASE P1', 'Permite importar los datos de un fase', NULL),
 ('CONSULTAR TIPO ITEM P1', 'Permite visualizar los tipos de items existentes', NULL), --para un MIEMBRO COMITE
 ('CREAR TIPO ITEM P1', 'Permite crear un tipo de item', NULL),
 ('ELIMINAR TIPO ITEM P1', 'Permite eliminar un tipo item', NULL),

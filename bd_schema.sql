@@ -85,7 +85,7 @@ CREATE TABLE permiso (
     id integer NOT NULL,
     codigo character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL,
-    id_fase integer NOT NULL
+    id_fase integer
 );
 
 ALTER TABLE ONLY permiso

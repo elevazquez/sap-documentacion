@@ -533,7 +533,7 @@ ALTER TABLE ONLY miembros_comite
     ADD CONSTRAINT fk_miembrosComite_usuario FOREIGN KEY (id_usuario)
     references usuario (id);
 ALTER TABLE ONLY miembros_comite
-    ADD CONSTRAINT uq_miembros_comite UNIQUE (id_proyecto,id_usuario);
+    ADD CONSTRAINT uq_miembros_comite UNIQUE (id_proyecto,id_usuario); 
 
 CREATE SEQUENCE miembros_comite_id_seq
     START WITH 1

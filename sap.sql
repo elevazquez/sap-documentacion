@@ -1056,6 +1056,8 @@ COPY fase (id, nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, 
 7	3	P	Ejecucion	Ejecicion	2013-06-01	2013-07-01	2
 5	1	A	Estudio	Estudio- reconocimiento del problema	2013-05-02	2013-05-22	2
 6	2	A	Creacion	Creacion	2013-05-22	2013-06-22	2
+8	1	P	fase 1	fase uno	2013-05-02	2013-07-06	23
+9	2	P	fase 2	fase 2	2013-05-02	2013-07-06	23
 \.
 
 
@@ -1063,7 +1065,7 @@ COPY fase (id, nro_orden, estado, nombre, descripcion, fecha_inicio, fecha_fin, 
 -- Name: fase_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('fase_id_seq', 7, true);
+SELECT pg_catalog.setval('fase_id_seq', 9, true);
 
 
 --
@@ -1288,6 +1290,10 @@ COPY item (id, id_usuario, id_fase, id_tipo_item, version, codigo, nombre, descr
 331	5	6	11	8	ITS-6	Reportes	Reportes	A	2	2013-06-22	125.00	\N	\N
 332	5	6	11	9	ITS-6	Reportes	Reportes	P	2	2013-06-22	125.00	\N	\N
 333	5	6	11	10	ITS-6	Reportes	Reportes	E	2	2013-06-22	125.00	\N	\N
+334	12	8	13	1	IT-1 TEST	ITEM1	ITEM 1	I	1	2013-06-23	23.00	\\x687474703a2f2f7665727473747564696f732e636f6d2f626c6f672f6e65772d666c61736b2d736974652f0d0a687474703a2f2f7065657765652e72656164746865646f63732e6f72672f656e2f322e302e322f7065657765652f6578616d706c652e68746d6c0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a68747470733a2f2f666c61736b2e72656164746865646f63732e6f72672f656e2f302e312f7475746f7269616c2f0d0a0d0a0d0a687474703a2f2f7777772e63617073756e6c6f636b2e6e65742f323031312f30352f636f64696e672d776974682d666c61736b2d616e642d73716c616c6368656d792e68746d6c0d0a687474703a2f2f7777772e6d61726d616b6f6964652e6f72672f646f776e6c6f61642f7465616368696e672f6173642f6173642d666c61736b2d7475746f7269616c2e7064660d0a687474703a2f2f7777772e6a61766132732e636f6d2f5475746f7269616c2f507974686f6e2f303434305f5f4347492d5765622f4c6f67696e666f726d2e68746d0d0a687474703a2f2f707974686f6e2e6d616a6962752e6f72672f70726567756e7461732f3538312f63726561722d756e2d6c6f67696e	text/plain
+335	12	8	13	1	IT-2 TEST	ITEM 2	ITEM 2	I	3	2013-06-23	156.00	\\x687474703a2f2f7665727473747564696f732e636f6d2f626c6f672f6e65772d666c61736b2d736974652f0d0a687474703a2f2f7065657765652e72656164746865646f63732e6f72672f656e2f322e302e322f7065657765652f6578616d706c652e68746d6c0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a68747470733a2f2f666c61736b2e72656164746865646f63732e6f72672f656e2f302e312f7475746f7269616c2f0d0a0d0a0d0a687474703a2f2f7777772e63617073756e6c6f636b2e6e65742f323031312f30352f636f64696e672d776974682d666c61736b2d616e642d73716c616c6368656d792e68746d6c0d0a687474703a2f2f7777772e6d61726d616b6f6964652e6f72672f646f776e6c6f61642f7465616368696e672f6173642f6173642d666c61736b2d7475746f7269616c2e7064660d0a687474703a2f2f7777772e6a61766132732e636f6d2f5475746f7269616c2f507974686f6e2f303434305f5f4347492d5765622f4c6f67696e666f726d2e68746d0d0a687474703a2f2f707974686f6e2e6d616a6962752e6f72672f70726567756e7461732f3538312f63726561722d756e2d6c6f67696e	text/plain
+336	12	9	14	1	IT- 3 TEST	ITEM 3	ITEM 3	I	1	2013-06-23	13.00	\\x687474703a2f2f7665727473747564696f732e636f6d2f626c6f672f6e65772d666c61736b2d736974652f0d0a687474703a2f2f7065657765652e72656164746865646f63732e6f72672f656e2f322e302e322f7065657765652f6578616d706c652e68746d6c0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a687474703a2f2f6e65742e74757473706c75732e636f6d2f7475746f7269616c732f707974686f6e2d7475746f7269616c732f616e2d696e74726f64756374696f6e2d746f2d707974686f6e732d666c61736b2d6672616d65776f726b2f0d0a68747470733a2f2f666c61736b2e72656164746865646f63732e6f72672f656e2f302e312f7475746f7269616c2f0d0a0d0a0d0a687474703a2f2f7777772e63617073756e6c6f636b2e6e65742f323031312f30352f636f64696e672d776974682d666c61736b2d616e642d73716c616c6368656d792e68746d6c0d0a687474703a2f2f7777772e6d61726d616b6f6964652e6f72672f646f776e6c6f61642f7465616368696e672f6173642f6173642d666c61736b2d7475746f7269616c2e7064660d0a687474703a2f2f7777772e6a61766132732e636f6d2f5475746f7269616c2f507974686f6e2f303434305f5f4347492d5765622f4c6f67696e666f726d2e68746d0d0a687474703a2f2f707974686f6e2e6d616a6962752e6f72672f70726567756e7461732f3538312f63726561722d756e2d6c6f67696e	text/plain
+337	13	9	14	1	IT 4 TEST	ITEM 4	ITEM 4	I	1	2013-06-23	45.00	\N	\N
 \.
 
 
@@ -1522,6 +1528,10 @@ COPY item_atributo (id, id_item, id_atributo, valor) FROM stdin;
 321	331	2	Liz
 322	332	2	Liz
 323	333	2	Liz
+324	334	1	FIJATE
+325	335	1	OJ
+326	336	2	NINGUNA
+327	337	2	NINGUNA
 \.
 
 
@@ -1529,14 +1539,14 @@ COPY item_atributo (id, id_item, id_atributo, valor) FROM stdin;
 -- Name: item_atributo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('item_atributo_id_seq', 323, true);
+SELECT pg_catalog.setval('item_atributo_id_seq', 327, true);
 
 
 --
 -- Name: item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('item_id_seq', 333, true);
+SELECT pg_catalog.setval('item_id_seq', 337, true);
 
 
 --
@@ -1599,6 +1609,7 @@ COPY miembros_comite (id, id_proyecto, id_usuario) FROM stdin;
 4	1	6
 5	2	5
 6	2	6
+7	23	12
 \.
 
 
@@ -1606,7 +1617,7 @@ COPY miembros_comite (id, id_proyecto, id_usuario) FROM stdin;
 -- Name: miembros_comite_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('miembros_comite_id_seq', 6, true);
+SELECT pg_catalog.setval('miembros_comite_id_seq', 7, true);
 
 
 --
@@ -1694,6 +1705,29 @@ COPY permiso (id, codigo, descripcion, id_recurso) FROM stdin;
 81	ARCHIVO ITEM	ARCHIVO ITEM F2 RIOS	4
 82	ARCHIVO ITEM	ARCHIVO ITEM F3 RIOS	5
 83	ARCHIVO ITEM	ARCHIVO ITEM F4 RIOS	6
+84	CONSULTAR PROYECTO	CONSULTAR PROYECTO	10
+85	APROBAR ITEM	APROBACION ITEM  F-1 TEST	11
+86	INSERTAR ITEM	INSERTAR ITEM F1 TEST	11
+87	MODIFICACION ITEM	MODIFICAR ITEM F1 TEST	11
+88	ELIMINAR ITEM	ELIMINAR ITEM F1 TEST	11
+89	AGREGAR ITEM LINEA BASE	AGREGAR ITEM LINEA BASE F1 TEST	11
+90	LIBERAR LINEA BASE	LIBERAR LINEA BASE F1 TEST	11
+91	COMPONER LINEA BASE	COMPONER LINEA BASE F1 TEST	11
+93	QUITAR ITEM LINEA BASE	QUITAR ITEM LINEA BASE F1 TEST	11
+94	VER LINEA BASE	VER LINEA BASE F1 TEST	11
+95	ADMINISTRAR LINEA BASE	ADMINISTRAR LB F1 TEST	11
+96	CREAR LINEA BASE	CREAR LINEA BASE F1 TEST	11
+97	INSERTAR ITEM	INSERTAR ITEM F2 TEST	12
+98	MODIFICACION ITEM	MODIFICAR ITEM F2 TEST	12
+99	ELIMINAR ITEM	ELIMINAR ITEM F2 TEST	12
+100	APROBAR ITEM	APROBACION ITEM F2 TEST	12
+101	CREAR LINEA BASE	CREAR LINEA BASE F2 TEST	12
+102	LIBERAR LINEA BASE	LIBERAR LINEA BASE F2 TEST	12
+103	COMPONER LINEA BASE	COMPONER LINEA BASE F2 TEST	12
+104	AGREGAR ITEM LINEA BASE	AGREGAR ITEM LINEA BASE F2 TEST	12
+105	QUITAR ITEM LINEA BASE	QUITAR ITEM LINEA BASE F2 TEST	12
+107	ARCHIVO ITEM	ARCHIVO ITEM F1 TEST	11
+108	ARCHIVO ITEM	ARCHIVO ITEM F2 TEST	12
 \.
 
 
@@ -1701,7 +1735,7 @@ COPY permiso (id, codigo, descripcion, id_recurso) FROM stdin;
 -- Name: permiso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('permiso_id_seq', 83, true);
+SELECT pg_catalog.setval('permiso_id_seq', 108, true);
 
 
 --
@@ -1711,6 +1745,7 @@ SELECT pg_catalog.setval('permiso_id_seq', 83, true);
 COPY proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros, fecha_inicio, fecha_fin, fecha_ultima_mod) FROM stdin;
 1	7	P	RiosWeb	Rios Java Web	3	2013-02-01	2013-06-22	2013-06-17
 2	8	P	Sicap	Sicap	3	2013-03-05	2013-06-22	2013-06-17
+23	12	N	proyectotest	proyecto para test	3	2013-05-02	2013-07-06	2013-06-23
 \.
 
 
@@ -1718,7 +1753,7 @@ COPY proyecto (id, id_usuario_lider, estado, nombre, descripcion, cant_miembros,
 -- Name: proyecto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('proyecto_id_seq', 22, true);
+SELECT pg_catalog.setval('proyecto_id_seq', 23, true);
 
 
 --
@@ -1735,6 +1770,10 @@ Implementacion RiosW	6	4	\N
 Estudio Sicap	7	5	\N
 Creacion Sicap	8	6	\N
 Ejecucion Sicap	9	7	\N
+proyectotest	10	\N	23
+fase1 test	11	8	\N
+fase2 test	12	9	\N
+proyecto test	13	\N	23
 \.
 
 
@@ -1742,7 +1781,7 @@ Ejecucion Sicap	9	7	\N
 -- Name: recurso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('recurso_id_seq', 9, true);
+SELECT pg_catalog.setval('recurso_id_seq', 13, true);
 
 
 --
@@ -1872,6 +1911,7 @@ COPY relacion (id, id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fe
 268	2	329	331	2013-06-22	2013-06-22	E
 269	2	329	332	2013-06-22	2013-06-22	E
 253	3	311	308	2013-06-22	2013-06-22	E
+270	2	334	335	2013-06-23	\N	A
 \.
 
 
@@ -1879,7 +1919,7 @@ COPY relacion (id, id_tipo_relacion, id_item, id_item_duenho, fecha_creacion, fe
 -- Name: relacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('relacion_id_seq', 269, true);
+SELECT pg_catalog.setval('relacion_id_seq', 270, true);
 
 
 --
@@ -1930,6 +1970,9 @@ COPY rol (id, codigo, descripcion) FROM stdin;
 5	DESARROLLADOR	Desarrollador
 6	DESARROLLADOR SICAP	Desarrollador Sicap
 7	COMITE CAMBIOS SICAP	COMITE DE CAMBIOS SICAP
+8	DESARROLLADOR TEST	DESARROLLADOR TEST
+9	LIDER TEST	LIDER TEST
+10	COMITE CAMBIOS TEST	COMITE DE CAMBIOS TEST
 \.
 
 
@@ -1937,7 +1980,7 @@ COPY rol (id, codigo, descripcion) FROM stdin;
 -- Name: rol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('rol_id_seq', 7, true);
+SELECT pg_catalog.setval('rol_id_seq', 10, true);
 
 
 --
@@ -2073,6 +2116,51 @@ COPY rol_permiso (id, id_rol, id_permiso) FROM stdin;
 132	5	81
 133	5	82
 134	5	83
+135	3	84
+136	8	85
+137	8	86
+138	8	87
+139	8	88
+140	8	89
+141	8	90
+142	8	91
+143	8	93
+144	8	94
+145	8	95
+146	8	96
+147	8	97
+148	8	98
+149	8	99
+150	8	100
+151	8	101
+152	8	102
+153	8	103
+154	8	104
+155	8	105
+156	10	85
+157	10	86
+158	10	87
+159	10	88
+160	10	89
+161	10	90
+162	10	91
+163	10	93
+164	10	94
+165	10	95
+166	10	96
+167	10	97
+168	10	98
+169	10	99
+170	10	100
+171	10	101
+172	10	102
+173	10	103
+174	10	104
+175	10	105
+176	8	107
+177	8	108
+178	10	107
+179	10	108
 \.
 
 
@@ -2080,7 +2168,7 @@ COPY rol_permiso (id, id_rol, id_permiso) FROM stdin;
 -- Name: rol_permiso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('rol_permiso_id_seq', 134, true);
+SELECT pg_catalog.setval('rol_permiso_id_seq', 179, true);
 
 
 --
@@ -2161,6 +2249,8 @@ COPY tipo_item (id, id_fase, codigo, nombre, descripcion) FROM stdin;
 10	5	TI-S2-1	Requerimientos	Requerimiento 
 11	6	TI-S2-2	Patrones	Patrones
 12	7	TI-S2-3	Comprobacion	Comprobacion
+13	8	TI TEST F1	Investigaciones	Investigaciones
+14	9	TI TEST F2	Desarrollo test	Desarrollo
 \.
 
 
@@ -2168,7 +2258,7 @@ COPY tipo_item (id, id_fase, codigo, nombre, descripcion) FROM stdin;
 -- Name: tipo_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('tipo_item_id_seq', 12, true);
+SELECT pg_catalog.setval('tipo_item_id_seq', 14, true);
 
 
 --
@@ -2205,6 +2295,8 @@ COPY titem_atributo (id, id_tipo_item, id_atributo) FROM stdin;
 10	10	1
 11	11	2
 12	12	1
+13	13	1
+14	14	2
 \.
 
 
@@ -2212,7 +2304,7 @@ COPY titem_atributo (id, id_tipo_item, id_atributo) FROM stdin;
 -- Name: titem_atributo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('titem_atributo_id_seq', 12, true);
+SELECT pg_catalog.setval('titem_atributo_id_seq', 14, true);
 
 
 --
@@ -2228,6 +2320,9 @@ COPY usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefo
 8	liderSicap	Lider Sicap	lider	64ff9e4a58fe52fb1a55987f34bc979d	lider@lider.com	luque	0981754623	1987-05-12
 9	usuario	Usuario	Usuario	cc25dddbb8e44fbd804322fd50d2620f	usuario@gmail.com	capiata	0982568924	1994-06-12
 10	user	user	user	ee11cbb19052e40b07aac0ca060c23ee	user@user.com	user	123	1998-05-25
+11	testadmin	testadmin	testadmin	098f6bcd4621d373cade4e832627b4f6	testadmin@testadmin.com	testadmin	123456	1988-02-02
+12	testlider	testlider	testlider	098f6bcd4621d373cade4e832627b4f6	testlider@testlider.com	testlider	123456	1988-02-03
+13	testdesa	testdesa	testdesa	098f6bcd4621d373cade4e832627b4f6	testdesa@testdesa.com	testdesa	123	1988-02-04
 \.
 
 
@@ -2235,7 +2330,7 @@ COPY usuario (id, usuario, nombre, apellido, password, correo, domicilio, telefo
 -- Name: usuario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('usuario_id_seq', 10, true);
+SELECT pg_catalog.setval('usuario_id_seq', 13, true);
 
 
 --
@@ -2258,6 +2353,11 @@ COPY usuario_rol (id, id_rol, id_usuario, id_proyecto) FROM stdin;
 28	7	5	2
 29	6	4	2
 30	6	5	\N
+31	2	12	23
+32	1	11	\N
+33	10	13	23
+34	10	12	23
+35	10	9	23
 \.
 
 
@@ -2265,7 +2365,7 @@ COPY usuario_rol (id, id_rol, id_usuario, id_proyecto) FROM stdin;
 -- Name: usuario_rol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('usuario_rol_id_seq', 30, true);
+SELECT pg_catalog.setval('usuario_rol_id_seq', 35, true);
 
 
 --

@@ -5,8 +5,8 @@ exportar
 
 importar
 $ sudo bash
-/opt/PostgreSQL/9.1/bin# 
+cp /opt/PostgreSQL/9.1/bin# 
 # su postgres
-$ ./psql -U postgres -d db1 -f db1.sql
+$ ./psql -U postgres -d sap -f sap.sql
 
 

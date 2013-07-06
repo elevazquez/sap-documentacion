@@ -1,0 +1,8 @@
+Bueno... sap tiene que ir en /etc/apache2/sites-available
+y httpd.conf es un archivo que está en /etc/apache2 y está vacío... en el mio al menos... y por eso se debe agregarle el nombre del server.
+después se tiene que hacer en consola sudo a2ensite app
+y luego sudo service apache2 restart 
+si todo sale bien, tendría que aparecer un mensaje como * Restarting web server apache2                                                 ... waiting .  
+y nada más...
+
+

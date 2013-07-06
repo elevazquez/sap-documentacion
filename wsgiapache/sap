@@ -1,0 +1,12 @@
+<VirtualHost 127.0.0.1:80>
+    ServerName 127.0.0.1
+
+    WSGIDaemonProcess sap user=elena group=sudo threads=5
+    WSGIScriptAlias / /home/elena/workspace/desarrollo/sap/sap.wsgi
+    <Directory /home/elena/workspace/desarrollo/sap/src/>
+        WSGIProcessGroup sap
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
